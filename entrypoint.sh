@@ -9,7 +9,7 @@ do
     echo "Cron $i not specified, moving on."
   else
     # add a cron job
-    echo "${!cronSchVar} root ${cronJobVar}" >> /etc/crontab
+    echo "${!cronSchVar} root ${!cronJobVar}" >> /etc/crontab
   fi
 done
 
