@@ -2,7 +2,7 @@
 
 This image provides a cron daemon that runs cron jobs passed as enviroment variables.
 
-Cron jobs is specified as enviroments in folowing pattern:
+Cron jobs are specified as enviroment variables in folowing pattern:
  - `CRON_SCHEDULE_N` cron schedule string, example: '0 2 * * *'
  - `CRON_JOB_N` command to be executed
 
