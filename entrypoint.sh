@@ -1,16 +1,18 @@
 #!/bin/bash
 set -eo pipefail
 
-for i in 1 2 3 4 5 6 7 8
+i=1
+
+cronSchVar=CRON_SCHEDULE_1
+cronJobVar=CRON_JOB_1
+
+while [ ! -z "${!cronSchVar}" ]
 do
+  echo "${!cronSchVar} root ${!cronJobVar}" >> /etc/crontab
+
+  i=$[$i+1]
   cronSchVar=CRON_SCHEDULE_$i
   cronJobVar=CRON_JOB_$i
-  if [ -z "${!cronSchVar}" -o -z "${!cronJobVar}" ]; then
-    echo "Cron $i not specified, moving on."
-  else
-    # add a cron job
-    echo "${!cronSchVar} root ${!cronJobVar}" >> /etc/crontab
-  fi
 done
 
 crontab /etc/crontab
