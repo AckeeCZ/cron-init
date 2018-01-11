@@ -7,4 +7,4 @@ RUN apt-get update && apt-get install -y curl && apt-get install -y cron && rm -
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-CMD ["cron","-f"]
+CMD touch /var/log/cron.log && cron && tail -f /var/log/cron.log
