@@ -15,6 +15,6 @@ do
   cronJobVar=CRON_JOB_$i
 done
 
-crontab /etc/crontab
+#crontab /etc/crontab
 
 exec "$@"
