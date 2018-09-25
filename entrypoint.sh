@@ -2,6 +2,7 @@
 set -eo pipefail
 
 i=1
+echo $TZ > /etc/timezone
 
 cronSchVar=CRON_SCHEDULE_1
 cronJobVar=CRON_JOB_1
