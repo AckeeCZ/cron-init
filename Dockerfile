@@ -7,4 +7,4 @@ RUN apt-get update && apt-get install -y curl && apt-get install -y anacron rsys
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-CMD cron && rsyslogd && tail -f /var/log/syslog
+CMD cron && rsyslogd && sleep 20 && tail -f /var/log/syslog
